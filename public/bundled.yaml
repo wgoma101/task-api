@@ -6,6 +6,8 @@ info:
 servers:
   - url: http://localhost:3000
     description: Local server
+  - url: https://task-api-qssx.onrender.com
+    description: Production server
 tags:
   - name: tasks
     description: Operations related to tasks
@@ -57,11 +59,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Task'
         '400':
-          description: Invalid input
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ValidationError'
+          $ref: '#/components/responses/badRequest'
 components:
   schemas:
     Task:
@@ -79,10 +77,16 @@ components:
       properties:
         error:
           type: string
-          example: Invalid input data
+          example: Invalidation error
         details:
           type: array
           items:
             type: string
-          example:
-            - Title is required
+          example: null
+  responses:
+    badRequest:
+      description: Invalid input
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ValidationError'

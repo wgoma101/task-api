@@ -6,6 +6,8 @@ info:
 servers:
   - url: http://localhost:3000
     description: Local server
+  - url: https://task-api-qssx.onrender.com
+    description: Production server
 tags:
   - name: tasks
     description: Operations related to tasks
