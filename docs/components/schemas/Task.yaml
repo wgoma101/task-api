@@ -1,0 +1,9 @@
+type: object
+properties:
+  id:
+    readOnly: true
+    type: integer
+  title:
+    type: string
+  completed:
+    type: boolean
