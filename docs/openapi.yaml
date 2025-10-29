@@ -14,3 +14,14 @@ tags:
 paths:
   /tasks:
     $ref: paths/tasks.yaml
+  /tasks/{id}:
+    $ref: paths/taskById.yaml
+
+components:
+  schemas:
+    Task:
+      $ref: 'components/schemas/Task.yaml'
+    ValidationError:
+      $ref: 'components/schemas/ValidationError.yaml'
+    NotFoundError:
+      $ref: 'components/schemas/NotFoundError.yaml'
